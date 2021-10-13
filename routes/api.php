@@ -29,17 +29,12 @@ Route::delete('deleteproduct/{id}' , [ProductController::class , 'deleteProduct'
 Route::get('getproduct/{id}' , [ProductController::class , 'getProduct']);
 Route::post('updateproduct/{id}' , [ProductController::class , 'updateProduct']);
 Route::get('search/{key}' , [ProductController::class , 'Search']);
-
 Route::post('/createCat', [CatController::class,'addCat']);
 Route::get('/showCats', [CatController::class,'ShowAllCat']);
-
 Route::get('Showcat/{id}' , [CatController::class , 'ShowCat']);
 Route::get('showAllProductsofCat/{id}' , [ProductController::class , 'showAllProductsofCat']);
 
 
-// ShowCat
-// ShowAllCat
-// showAllProductsofCat
 Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post('/logout', [AuthController::class,'Logout']);
 

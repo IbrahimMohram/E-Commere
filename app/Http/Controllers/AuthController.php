@@ -16,14 +16,16 @@ class AuthController extends Controller
         //     'email' =>'required|email',
         //     'password' =>'required'
         // ]);
-        // if($validator->fails()){
+      
+        // if(validate()->fails()){
         //     return response()->json(['status_code'=>400 , 'message' =>'Bad Request']);
         // }
         $this->validate($request,[
             'name' =>'required',
            'email' =>'required|email',
-           'password' =>'required|confirmed'
+           'password' =>'required'
         ]);
+        
         $user =new User();
         $user->name = $request->name;
         $user->email = $request->email;
